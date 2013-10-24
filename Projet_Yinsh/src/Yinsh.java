@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Yinsh {
 
-   public enum Couleur {BLACK, WHITE }; // Enumération des 2 constantes de couleur
+   public enum Color {BLACK, WHITE }; // Enumération des 2 constantes de couleur
    public enum Colonne {A, B, C, D, E, F, G, H, I, J, K}; //Enumération des lettres désignant les colonnes
 
 	/*2)########## Deuxième histoire ##########*/
@@ -10,14 +10,14 @@ public class Yinsh {
 	int[][] plateau_jeu = new int[11][11];
 
 	/* 1)########## Prémière Histoire ##########*/
-	public Couleur current_color() {
+	public Color current_color() {
 		Random random = new Random();
 		int nbAlea = random.nextInt(2); //nbAlea choisi au hasard et vaut soit 0 soit 1
 
-		if(Couleur.BLACK.ordinal()==nbAlea) //Si nbAlea=0 alors retourne BLACK sinon retourne BLANC
-			return(Couleur.BLACK);
+		if(Color.BLACK.ordinal()==nbAlea) //Si nbAlea=0 alors retourne BLACK sinon retourne BLANC
+			return(Color.BLACK);
 		else
-			return(Couleur.WHITE);
+			return(Color.WHITE);
 	}
 
 	public int[] putRing(String lettre, int num, String couleur) {
@@ -28,7 +28,7 @@ public class Yinsh {
 		//Vérification des coordonnées + levée d'exception
 		try {
 			Colonne.valueOf(lettre); 
-			Couleur.valueOf(couleur);
+			Color.valueOf(couleur);
 		}catch (Exception e) { System.out.println("Les coordonnées"+" ("+lettre+","+num+","+couleur+") "+"n'existent pas ");}
 
 		if (num < 0 || num > 11){
@@ -39,9 +39,9 @@ public class Yinsh {
 			}
 		}
 
-		//Conversion de lettre en valeur de type Colonne et de couleur en valeur de type Couleur	
+		//Conversion de lettre en valeur de type Colonne et de couleur en valeur de type Color
 		Colonne colonne = Colonne.valueOf(lettre); 
-		Couleur coulr = Couleur.valueOf(couleur);
+		Color coulr = Color.valueOf(couleur);
 
 		int c = colonne.ordinal(); //c appartient à {0,1,2,...,10}
 		int clr = coulr.ordinal(); //clr vaut 0 si couleur=BLACK ou 1 si couleur=BLANC 
@@ -121,7 +121,7 @@ public class Yinsh {
 		//Vérification des coordonnées + levée d'exception
 		try {
 			Colonne.valueOf(lettre); 
-			Couleur.valueOf(couleur);
+			Color.valueOf(couleur);
 		}catch (Exception e) { System.out.println("Les coordonnées"+" ("+lettre+","+num+","+couleur+") "+"n'existent pas ");}
 
 		if (num < 0 || num > 11){
@@ -131,9 +131,9 @@ public class Yinsh {
 				System.out.println("Les coordonnées"+" ("+lettre+","+num+","+couleur+") "+"n'existent pas ");
 			}
 		}
-		//Conversion de lettre en valeur de type Colonne et de couleur en valeur de type Couleur	
+		//Conversion de lettre en valeur de type Colonne et de couleur en valeur de type Color
 		Colonne colonne = Colonne.valueOf(lettre); 
-		Couleur coulr = Couleur.valueOf(couleur);
+		Color coulr = Color.valueOf(couleur);
 
 		int c = colonne.ordinal(); //c appartient à {0,1,2,...,10}
 		int clr = coulr.ordinal(); //clr vaut 0 si couleur=BLACK ou 1 si couleur=BLANC 
@@ -209,7 +209,7 @@ public class Yinsh {
 				System.out.println("Les coordonnées"+" n'existent pas ");
 			}
 		}
-		//Conversion de lettre en valeur de type Colonne et de couleur en valeur de type Couleur	
+		//Conversion de lettre en valeur de type Colonne et de couleur en valeur de type Color
 		Colonne colonne = Colonne.valueOf(lettre1); 
 		Colonne colonne2 = Colonne.valueOf(lettre2);
 		int c = colonne.ordinal(); //c appartient à {0,1,2,...,10}
@@ -250,7 +250,7 @@ public class Yinsh {
 					System.out.println("Les coordonnées"+" n'existent pas ");
 				}
 			}
-			//Conversion de lettre en valeur de type Colonne et de couleur en valeur de type Couleur	
+			//Conversion de lettre en valeur de type Colonne et de couleur en valeur de type Color
 			Colonne colonne = Colonne.valueOf(lettre); 
 			int c = colonne.ordinal(); //c appartient à {0,1,2,...,10}
 

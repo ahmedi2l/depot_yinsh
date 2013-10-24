@@ -12,7 +12,7 @@ public class Application {
         yinsh.putRing(new Coordinates('H', 6), Yinsh.Color.WHITE);
         yinsh.putRing(new Coordinates('J', 8), Yinsh.Color.BLACK);
         yinsh.putRing(new Coordinates('C', 2), Yinsh.Color.WHITE);
-    } */
+    }    */
 
  /*   private static void putMarkerAndMoveRing(Yinsh yinsh) {
         // le joueur noir place un marqueur  et déplace un anneau

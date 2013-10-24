@@ -11,7 +11,7 @@ public class MonTest extends TestCase {
     public void test_Histoire1() {
         Yinsh a = new Yinsh();
 
-        assertTrue(a.current_color() == Yinsh.Couleur.BLACK || a.current_color() == Yinsh.Couleur.WHITE);
+        assertTrue(a.current_color() == Yinsh.Color.BLACK || a.current_color() == Yinsh.Color.WHITE);
     }
 
     /*2)########## Test histoire2 ##########*/
