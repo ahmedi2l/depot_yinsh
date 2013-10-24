@@ -1,12 +1,16 @@
 import java.util.*;
 
-enum Couleur {BLACK, WHITE }; // Enumération des 2 constantes de couleur
-enum Colonne {A, B, C, D, E, F, G, H, I, J, K}; //Enumération des lettres désignant les colonnes
-
 public class Yinsh {
 
+   public enum Couleur {BLACK, WHITE }; // Enumération des 2 constantes de couleur
+   public enum Colonne {A, B, C, D, E, F, G, H, I, J, K}; //Enumération des lettres désignant les colonnes
+
+	/*2)########## Deuxième histoire ##########*/
+	int nb_zeros=0, nb_anneaux=0;
+	int[][] plateau_jeu = new int[11][11];
+
 	/* 1)########## Prémière Histoire ##########*/
-	public Couleur current_color() {   
+	public Couleur current_color() {
 		Random random = new Random();
 		int nbAlea = random.nextInt(2); //nbAlea choisi au hasard et vaut soit 0 soit 1
 
@@ -16,10 +20,7 @@ public class Yinsh {
 			return(Couleur.WHITE);
 	}
 
-	/*2)########## Deuxième histoire ##########*/
-	int nb_zeros=0, nb_anneaux=0;
-	int[][] plateau_jeu = new int[11][11];
-	public int[] put_ring(String lettre, int num, String couleur) {
+	public int[] putRing(String lettre, int num, String couleur) {
 		//Conversion de lettre et couleur en majuscule pour ne pas se soucier de la casse
 		lettre=lettre.toUpperCase(); 
 		couleur=couleur.toUpperCase(); 
@@ -182,15 +183,13 @@ public class Yinsh {
 		lettre1 = lettre2;
 		num1 = num2;
 
-		yinsh.put_ring(lettre2, num2, couleur);
+		yinsh.putRing(lettre2, num2, couleur);
 
 		return plateau_jeu;
 
 	}
 
 	/*6)########## Cinquième histoire ##########*/
-
-
 
 	/*7)########## Septième histoire ##########*/
 	public int[][]remove_row(String lettre1, int num1, String lettre2, int num2) {
@@ -235,6 +234,7 @@ public class Yinsh {
 		return plateau_jeu;
 
 	}
+
 		public int[][]remove_ring(String lettre, int num, String cloleur) {
 			lettre=lettre.toUpperCase(); 
 
